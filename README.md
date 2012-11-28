@@ -1,4 +1,4 @@
 jscast
 ======
 
-Node-based Shoutcast-compatible MP3 streaming server
+A node-based MP3 streaming server that will be compatible to shoutcast1 clients.
