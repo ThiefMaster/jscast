@@ -1,0 +1,27 @@
+{
+  "name": "jscast",
+  "version": "0.0.0",
+  "description": "Shoutcast-compatible MP3 streaming server",
+  "main": "./lib/jscast.js",
+  "bin": "./simple-cli.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThiefMaster/jscast.git"
+  },
+  "keywords": [
+    "mp3",
+    "shoutcast",
+    "streaming",
+    "radio"
+  ],
+  "author": "Adrian Mönnich",
+  "license": "BSD",
+  "dependencies": {
+    "js-yaml": "~1.0.3",
+    "express": "~3.0.3",
+    "underscore": "~1.4.2",
+    "buffertools": "~1.1.0",
+    "node-uuid": "~1.4.0",
+    "goodwin": "~1.1.0"
+  }
+}
