@@ -20,11 +20,11 @@ function loadSettings(configFile) {
 }
 
 function simpleAuthenticator(ip, password, admin, callback) {
-    if(password == settings.passwords.admin) {
+    if(password === settings.passwords.admin) {
         callback(admin || !settings.passwords.strictAdmin);
     }
     else {
-        callback(!admin && password == settings.passwords.dj);
+        callback(!admin && password === settings.passwords.dj);
     }
 }
 
