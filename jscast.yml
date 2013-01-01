@@ -13,3 +13,8 @@ network:
 
 stream:
     metaInterval: 8192
+    # Optional; if set the corresponding data from the source is ignored
+    metaOverride:
+        stationName: 'JSCast is awesome!'
+        stationUrl: 'https://github.com/ThiefMaster/jscast'
+        stationGenre: 'JavaScript'
