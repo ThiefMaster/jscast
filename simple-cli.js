@@ -29,9 +29,9 @@ function simpleAuthenticator(ip, password, admin, callback) {
 }
 
 var settings = loadSettings(process.argv.length > 2 ? process.argv[2] : 'jscast.yml');
-settings.authenticator = simpleAuthenticator;
 
 var jscast = new JSCast(settings);
+jscast.authenticate = simpleAuthenticator;
 jscast.on('songChanged', function(song) {
     console.log('Song title changed: ' + song);
 });
