@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  h1 Administration
+
+  h2 Listeners
+  table
+    thead
+      tr
+        th IP Address
+        th User Agent
+        th Connect Time
+        th Actions
+    tbody
+      each client in clients
+        tr
+          td= client.req.ip
+          td= client.userAgent
+          td= client.getAge()
+          td
+            a(href='/admin/kick-listener/'+client.id) Kick
+
+  h2 Source
+  if !source
+    p: strong No source active
+  else
+    p
+      | Connected from <strong>#{source.ip}</strong> for <strong>#{source.getAge()}</strong> 
+      a(href='/admin/kick-source') Kick
+
+  h2 Metadata
+  dl
+    dt Station Name
+    dd #{metadata.stationName}
+    dt Station URL
+    dd: a(href=metadata.stationUrl) #{metadata.stationUrl}
+    dt Station Genre
+    dd #{metadata.stationGenre}
+    dt Song
+    dd #{metadata.song}
