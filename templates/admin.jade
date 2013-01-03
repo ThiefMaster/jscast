@@ -26,7 +26,8 @@ block content
   else
     p
       | Connected from <strong>#{source.ip}</strong> for <strong>#{source.getAge()}</strong> 
-      a(href='/admin/kick-source') Kick
+      a(href='/admin/kick-source') Kick<br>
+      | Streaming with <strong>#{metadata.bitrate} kbps</strong>
 
   h2 Metadata
   dl
