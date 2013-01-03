@@ -1,41 +1,44 @@
 extends layout
 
 block content
-  h1 Administration
+  h1 JSCast Administration
 
-  h2 Listeners
-  table
-    thead
-      tr
-        th IP Address
-        th User Agent
-        th Connect Time
-        th Actions
-    tbody
-      each client in clients
+  .row: .span9
+    h2 Listeners
+    table.table
+      thead
         tr
-          td= client.req.ip
-          td= client.userAgent
-          td= client.getAge()
-          td
-            a(href='/admin/kick-listener/'+client.id) Kick
+          th IP Address
+          th User Agent
+          th Connect Time
+          th Actions
+      tbody
+        each client in clients
+          tr
+            td= client.req.ip
+            td= client.userAgent
+            td= client.getAge()
+            td
+              a(href='/admin/kick-listener/'+client.id, class='btn btn-mini btn-warning') Kick
 
-  h2 Source
-  if !source
-    p: strong No source active
-  else
-    p
-      | Connected from <strong>#{source.ip}</strong> for <strong>#{source.getAge()}</strong> 
-      a(href='/admin/kick-source') Kick<br>
-      | Streaming with <strong>#{metadata.bitrate} kbps</strong>
+  .row: .span9
+    h2 Source
+    if !source
+      p: strong No source active
+    else
+      p
+        | Connected from <strong>#{source.ip}</strong> for <strong>#{source.getAge()}</strong><br>
+        | Streaming with <strong>#{metadata.bitrate} kbps</strong><br>
+        a(href='/admin/kick-source', class='btn btn-mini btn-danger') Kick
 
-  h2 Metadata
-  dl
-    dt Station Name
-    dd #{metadata.stationName}
-    dt Station URL
-    dd: a(href=metadata.stationUrl) #{metadata.stationUrl}
-    dt Station Genre
-    dd #{metadata.stationGenre}
-    dt Song
-    dd #{metadata.song}
+  .row: .span9
+    h2 Metadata
+    dl
+      dt Station Name
+      dd #{metadata.stationName}
+      dt Station URL
+      dd: a(href=metadata.stationUrl) #{metadata.stationUrl}
+      dt Station Genre
+      dd #{metadata.stationGenre}
+      dt Song
+      dd #{metadata.song}
