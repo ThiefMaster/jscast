@@ -3,5 +3,10 @@ extends layout
 block content
   h1 #{metadata.stationName} - powered by JSCast
   p Welcome to <strong>#{metadata.stationName}</strong>
+  p Currently playing <strong>#{metadata.song}</strong>
+  p
+    | #{listeners.total} listener#{listeners.total != 1 ? 's' : ''}
+    | (#{listeners.unique} unique);
+    | Peak: #{listeners.peak}
   p
     a(href='/admin/') Admin
