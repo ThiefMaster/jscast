@@ -2,7 +2,7 @@
 var yaml = require('js-yaml'),
     fs = require('fs'),
     _ = require('underscore'),
-    JSCast = require('./').JSCast;
+    JSCast = require('./lib/jscast').JSCast;
 
 function loadSettings(configFile) {
     if(!fs.existsSync(configFile)) {
