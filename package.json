@@ -24,6 +24,7 @@
     "node-uuid": "~1.4.0",
     "goodwin": "~1.1.0",
     "jade": "~0.27.7",
-    "duration": "~0.1.4"
+    "duration": "~0.1.4",
+    "bitstring": "~1.0.0"
   }
 }
