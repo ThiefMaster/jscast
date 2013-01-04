@@ -13,6 +13,7 @@ network:
 
 stream:
     metaInterval: 8192
+    bufferSize: 120000 # 5s with 192kbps
     # Optional; if set the corresponding data from the source is ignored
     metaOverride:
         stationName: 'JSCast is awesome!'
