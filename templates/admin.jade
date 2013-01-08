@@ -25,7 +25,12 @@ block content
     h2 Source
     if !source
       p: strong No source active
-    else
+    else if source.type == 'relay'
+      p
+        | Relaying from <strong>#{source.address}</strong> for <strong>#{source.getAge()}</strong><br>
+        | Streaming with <strong>#{metadata.bitrate} kbps</strong><br>
+        a(href='/admin/kick-source', class='btn btn-mini btn-danger') Reconnect
+    else if source.type == 'client'
       p
         | Connected from <strong>#{source.ip}</strong> for <strong>#{source.getAge()}</strong><br>
         | Streaming with <strong>#{metadata.bitrate} kbps</strong><br>

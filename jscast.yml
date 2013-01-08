@@ -11,6 +11,12 @@ network:
     # port for listeners. port+1 must be accessible, too
     port: 18000
 
+# If the relay is used no regular source connections will be accepted
+relay:
+    enabled: false
+    host: 'stream.rockyou.fm'
+    port: 80
+
 stream:
     metaInterval: 8192
     bufferSize: 120000 # 5s with 192kbps
